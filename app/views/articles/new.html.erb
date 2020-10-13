@@ -6,9 +6,7 @@
   <li><%= msg %></li>
   <% end %>
 </ul>
-<% end %> 
-
-<%= form_with scope: :article, url: articles_path, local: true do |f|
+<% end %> <%= form_with scope: :article, url: articles_path, local: true do |f|
 %>
 
 <p>
@@ -23,4 +21,4 @@
 
 <p><%= f.submit %></p>
 
-<% end %>
+<% end %> <%= link_to "Return to articles listing", articles_path %>
