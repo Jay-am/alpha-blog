@@ -11,10 +11,10 @@
 </p>
 
 <p>
-  <%= f.label :password_digest %><br />
-  <%= f.password_field :password_digest, placeholder: "Choose a password" %>
+  <%= f.label :password %><br />
+  <%= f.password_field :password, placeholder: "Choose a password" %>
 </p>
 
-<p><%= f.submit(@user.new_record? ? ? "Sign up" : "Update account" ) %></p>
+<p><%= f.submit(@user.new_record? ? "Sign up" : "Update account" ) %></p>
 
 <% end %>
