@@ -1,7 +1,10 @@
 <h1>Home</h1>
 
 <% if logged_in? %>
-<p><%= link_to current_user.username, user_path(current_user) %></p>
+<p>
+  <%= link_to "(Admin)" if current_user.admin? current_user.username,
+  user_path(current_user) %>
+</p>
 <p><%= link_to 'Sign-out', logout_path, method: :delete %></p>
 <%= link_to "Delete profile", user_path(current_user), method: :delete, data: {
 confirm: "Are you sure?" } %> <% else %>
