@@ -8,5 +8,9 @@
   <p><%= link_to 'View Profile', user %></p>
   <% if logged_in? && user == current_user %>
   <p><%= link_to 'Edit Profile', edit_user_path(user) %></p>
+  <p>
+    <%= link_to "Delete profile", user_path(current_user), method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  </p>
   <% end %> <% end %>
 </div>
