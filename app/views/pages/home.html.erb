@@ -1,12 +1,12 @@
 <h1>Home</h1>
 
 <% if logged_in? %>
-<p><%= link_to 'Log in', login_path %></p>
 <p><%= link_to current_user.username, user_path(current_user) %></p>
-<p><%= link_to 'Logout', logout_path, method: :delete %></p>
-<% else %>
-<p><%= link_to 'Log in', login_path %></p>
-<p><%= link_to 'Sign up', signup_path %></p>
+<p><%= link_to 'Sign-out', logout_path, method: :delete %></p>
+<%= link_to "Delete profile", user_path(current_user), method: :delete, data: {
+confirm: "Are you sure?" } %> <% else %>
+<p><%= link_to 'Sign-in', login_path %></p>
+<p><%= link_to 'Sign-up', signup_path %></p>
 <% end %>
 <br />
 <p><%= link_to "Articles listing", articles_path %></p>
