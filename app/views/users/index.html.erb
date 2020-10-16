@@ -6,6 +6,7 @@
   <p><%= link_to gravatar_for(user, size: 150), user %></p>
   <p><%= pluralize(user.articles.count, "article") %></p>
   <p><%= link_to 'View Profile', user %></p>
+  <% if logged_in? && user == current_user %>
   <p><%= link_to 'Edit Profile', edit_user_path(user) %></p>
-  <% end %>
+  <% end %> <% end %>
 </div>
