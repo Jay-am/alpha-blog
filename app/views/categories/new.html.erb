@@ -1,15 +1,3 @@
 <h1>Create a new category</h1>
-<div>
-  <%= render 'shared/errors', obj: @category %> <%= form_with(model: @category,
-  local: true) do |f| %>
-  <div>
-    <%= f.label :name, "Category name" %>
-    <div><%= f.text_field :name, placeholder: "Enter a name" %></div>
-  </div>
-
-  <div><%= f.submit %></div>
-  <% end %>
-</div>
-<div>
-  <%= link_to '[ Cancel and return to articles listing ]', articles_path%>
-</div>
+<div><%= render 'form' %></div>
+<div><%= link_to '[ Cancel and return to categories ]', categories_path%></div>
