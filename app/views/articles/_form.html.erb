@@ -10,6 +10,15 @@
   <%= f.text_area :description %>
 </p>
 
+<div>
+  <%= f.label :category %>
+  <div>
+    <%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt:
+    "Make your selection from the list below (can be empty)"}, { multiple:
+    true}) %>
+  </div>
+</div>
+
 <p><%= f.submit %></p>
 
 <% end %>
