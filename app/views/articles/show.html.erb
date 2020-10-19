@@ -5,6 +5,10 @@
 <p><strong>Autor: </strong>by <%= @article.user.username %></p>
 <p><%= link_to gravatar_for(@article.user), user_path(@article.user) %></p>
 
+<% if @article.categories.any? %>
+<div><%= render @article.categories %></div>
+<% end %>
+
 <p>
   <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
   <%= link_to "Edit", edit_article_path(@article) %> | <%= link_to "Delete",
